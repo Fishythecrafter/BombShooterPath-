@@ -6,7 +6,7 @@ public static class ModHelperData
     public const string Version = "1.0.0";
     public const string Name = "Path++ BombShooter";
 
-    public const string Description = "More Path BombShooter";
+    public const string Description = "Path++ Bomb shooter";
     public const string Dependencies = "doombubbles/paths-plus-plus";
 
     public const string RepoOwner = "FishyTheCrafter"; // TODO add your github username hero, also in the download url in README.md
