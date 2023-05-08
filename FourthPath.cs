@@ -66,7 +66,7 @@ public class FourthPath : BloonsTD6Mod
         public override void ApplyUpgrade(TowerModel towerModel)
         {
             var attackModel = towerModel.GetBehavior<AttackModel>();
-            attackModel.weapons[0].rate = 0.5f;
+            attackModel.weapons[0].rate -= 0.5f;
         }
     }
     public class QuadDropilesDamage : UpgradePlusPlus<FourthPath2>
@@ -79,7 +79,7 @@ public class FourthPath : BloonsTD6Mod
         public override void ApplyUpgrade(TowerModel towerModel)
         {
             var attackModel = towerModel.GetBehavior<AttackModel>();
-            attackModel.weapons[0].projectile.GetBehavior<DamageModel>().damage = 500;
+            attackModel.weapons[0].projectile.GetBehavior<DamageModel>().damage += 500;
         }
     }
     public class UlimatePower : UpgradePlusPlus<FourthPath2>
@@ -94,8 +94,10 @@ public class FourthPath : BloonsTD6Mod
             towerModel.display = new PrefabReference() { guidRef = "02869eae1ede09640bbf409d69d6aabe" };
             var attackModel = towerModel.GetBehavior<AttackModel>();
             attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "dcd6cd8511c9a03458a32f42f860882c" };
-            attackModel.weapons[0].projectile.GetBehavior<DamageModel>().damage = 9998;
-            attackModel.weapons[0].rate = 0.25f;
+            attackModel.weapons[0].projectile.GetBehavior<DamageModel>().damage += 9998;
+            attackModel.weapons[0].rate -= 0.25f;
+            attackModel.range += 100;
+            towerModel.range += 100;
         }
     }
 }
